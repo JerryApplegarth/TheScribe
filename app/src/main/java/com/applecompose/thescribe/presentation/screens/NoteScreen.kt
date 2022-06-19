@@ -24,6 +24,8 @@ fun NoteScreen() {
 			.padding(6.dp)
 	) {
 		TopApp()
+		// Content goes here
+
 
 
 
