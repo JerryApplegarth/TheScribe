@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.applecompose.thescribe.presentation.screens.HomeScreen
 import com.applecompose.thescribe.ui.theme.TheScribeTheme
 import com.applecompose.thescribe.ui.theme.newBackgroundColor
 
@@ -23,6 +24,7 @@ class MainActivity : ComponentActivity() {
 					modifier = Modifier.fillMaxSize(),
 					color = MaterialTheme.colors.newBackgroundColor
 				) {
+					HomeScreen()
 
 				}
 			}
