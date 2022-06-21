@@ -24,7 +24,7 @@ private val LightColorPalette = lightColors(
 
 	/* Other default colors to override
     background = Color.White,
-    surface = Color.White,
+
 
 
     */

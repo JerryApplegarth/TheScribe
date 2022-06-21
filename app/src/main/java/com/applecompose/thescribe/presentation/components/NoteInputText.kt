@@ -29,7 +29,7 @@ fun NoteInputText(
 		value = text,
 		onValueChange = onTextChange,
 		colors = TextFieldDefaults.textFieldColors(
-			backgroundColor = MaterialTheme.colors.cardBackground),
+			backgroundColor = MaterialTheme.colors.background),
 		maxLines = maxLine,
 		label = { Text(text = label)},
 		keyboardOptions = KeyboardOptions.Default.copy(
