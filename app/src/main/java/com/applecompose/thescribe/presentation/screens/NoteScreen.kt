@@ -100,7 +100,9 @@ fun NoteScreen(
 			items(notes) { note ->
 				NoteRow(
 					note = note,
-					onNoteClicked = {})
+					onNoteClicked = {
+						onRemoveNote(it)
+					})
 			}
 
 		}

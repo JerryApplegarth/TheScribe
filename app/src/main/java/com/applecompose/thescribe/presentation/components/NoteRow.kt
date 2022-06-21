@@ -40,7 +40,9 @@ fun NoteRow(
 	) {
 		Column(
 			modifier
-				.clickable { }
+				.clickable {
+					onNoteClicked(note)
+				}
 				.padding(horizontal = 14.dp, vertical = 6.dp),
 			horizontalAlignment = Alignment.Start
 		) {
