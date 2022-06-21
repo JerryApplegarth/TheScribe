@@ -3,9 +3,7 @@ package com.applecompose.thescribe.presentation.screens
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
-import com.applecompose.thescribe.data.NoteDataSource
 import com.applecompose.thescribe.domain.model.Note
-
 
 
 @Composable
