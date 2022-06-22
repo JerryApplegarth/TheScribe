@@ -11,7 +11,9 @@ import androidx.compose.ui.Modifier
 import com.applecompose.thescribe.presentation.screens.HomeScreen
 import com.applecompose.thescribe.ui.theme.TheScribeTheme
 import com.applecompose.thescribe.ui.theme.newLightBackgroundColor
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
