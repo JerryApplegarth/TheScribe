@@ -6,9 +6,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -40,9 +43,7 @@ fun NoteRow(
 	) {
 		Column(
 			modifier
-				.clickable {
-					onNoteClicked(note)
-				}
+
 				.padding(horizontal = 14.dp, vertical = 6.dp),
 			horizontalAlignment = Alignment.Start
 		) {
@@ -56,8 +57,18 @@ fun NoteRow(
 			)
 			Text(
 				text = note.entryDate.format(
-					DateTimeFormatter.ofPattern("EEE, d MMM")),
+					DateTimeFormatter.ofPattern("EEE, d MMM")
+				),
 				style = MaterialTheme.typography.caption
+			)
+			Icon(
+				imageVector = Icons.Rounded.Delete,
+				contentDescription = "delete icon",
+				modifier = Modifier
+					.clickable {
+						onNoteClicked(note)
+					}
+					.align(Alignment.End)
 			)
 
 		}

@@ -1,22 +1,29 @@
 package com.applecompose.thescribe.presentation.screens
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
-import com.applecompose.thescribe.domain.model.Note
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.applecompose.thescribe.NoteViewModel
 
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(noteViewModel: NoteViewModel = viewModel()) {
+	val notesList = noteViewModel.getAllNotes()
 
-	val notes = remember { mutableStateListOf<Note>()}
-
-	NoteScreen(notes = notes,
+	NoteScreen(notes = notesList,
 		onAddNote = {
-					notes.add(it)
+			noteViewModel.addNote(it)
+
 		},
 		onRemoveNote = {
-			notes.remove(it)
+			noteViewModel.removeNote(it)
+
 		})
 
 }
+
+
+
+
+
+
+
