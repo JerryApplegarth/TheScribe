@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.applecompose.thescribe.domain.model.Note
+import com.applecompose.thescribe.domain.utils.formatDate
 import com.applecompose.thescribe.ui.theme.cardBackground
 import com.applecompose.thescribe.ui.theme.mediumGreen
 import com.applecompose.thescribe.ui.theme.newBackgroundColor
@@ -56,9 +57,7 @@ fun NoteRow(
 				style = MaterialTheme.typography.subtitle1
 			)
 			Text(
-				text = note.entryDate.format(
-					DateTimeFormatter.ofPattern("EEE, d MMM")
-				),
+				text = formatDate(note.entryDate.time),
 				style = MaterialTheme.typography.caption
 			)
 			Icon(

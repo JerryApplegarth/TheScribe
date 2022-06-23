@@ -7,7 +7,9 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.applecompose.thescribe.presentation.screens.HomeScreen
 import com.applecompose.thescribe.ui.theme.TheScribeTheme
 import com.applecompose.thescribe.ui.theme.newLightBackgroundColor
@@ -15,6 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+	@ExperimentalComposeUiApi
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContent {
@@ -24,6 +27,7 @@ class MainActivity : ComponentActivity() {
 					modifier = Modifier.fillMaxSize(),
 					color = MaterialTheme.colors.newLightBackgroundColor
 				) {
+					//val noteViewModel = viewModel<NoteViewModel>() // also works
 					val noteViewModel: NoteViewModel by viewModels()
 
 					HomeScreen(noteViewModel = noteViewModel)

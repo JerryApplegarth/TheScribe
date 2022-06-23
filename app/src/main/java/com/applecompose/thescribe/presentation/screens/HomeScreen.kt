@@ -1,13 +1,16 @@
 package com.applecompose.thescribe.presentation.screens
 
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.ExperimentalComposeUiApi
 import com.applecompose.thescribe.NoteViewModel
 
 
+@ExperimentalComposeUiApi
 @Composable
-fun HomeScreen(noteViewModel: NoteViewModel = viewModel()) {
-	val notesList = noteViewModel.getAllNotes()
+fun HomeScreen(noteViewModel: NoteViewModel) {
+
+	val notesList = noteViewModel.noteList.collectAsState().value
 
 	NoteScreen(notes = notesList,
 		onAddNote = {
@@ -17,7 +20,8 @@ fun HomeScreen(noteViewModel: NoteViewModel = viewModel()) {
 		onRemoveNote = {
 			noteViewModel.removeNote(it)
 
-		})
+		}
+	)
 
 }
 

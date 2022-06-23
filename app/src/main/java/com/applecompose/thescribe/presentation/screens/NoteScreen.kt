@@ -9,6 +9,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -24,6 +25,7 @@ import com.applecompose.thescribe.presentation.components.TopApp
 import com.applecompose.thescribe.ui.theme.TheScribeTheme
 import com.applecompose.thescribe.ui.theme.newBackgroundColor
 
+@ExperimentalComposeUiApi
 @Composable
 fun NoteScreen(
 	notes: List<Note>,
@@ -111,6 +113,7 @@ fun NoteScreen(
 
 
 
+@ExperimentalComposeUiApi
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun NoteScreenPreview() {
